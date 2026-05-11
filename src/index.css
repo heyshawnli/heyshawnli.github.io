@@ -8,51 +8,60 @@
   }
 
   body {
-    background-color: #09090b;
-    color: #fafafa;
+    background-color: #ffffff;
+    color: #111827;
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
-    background-color: #22d3ee33;
-    color: #22d3ee;
+    background-color: #eef2ff;
+    color: #4f46e5;
   }
 }
 
 @layer utilities {
   .section-padding {
-    @apply px-6 py-20 md:px-12 lg:px-24 xl:px-40;
+    @apply px-6 py-24 md:px-12 lg:px-24 xl:px-40;
   }
 
   .card {
-    @apply bg-zinc-900 border border-zinc-800 rounded-2xl;
+    @apply bg-white rounded-2xl border border-gray-100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 20px 40px rgba(79,70,229,0.08);
+    transform: translateY(-2px);
   }
 
   .tag {
-    @apply text-xs font-mono px-2.5 py-1 rounded-md bg-zinc-800 text-cyan-400 border border-zinc-700;
+    @apply text-xs font-mono px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-600 font-medium;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-cyan-400 to-sky-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent;
   }
 
-  .glow {
-    box-shadow: 0 0 30px rgba(34, 211, 238, 0.08);
+  .section-alt {
+    background-color: #F8FAFC;
   }
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #f9fafb;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #d1d5db;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #9ca3af;
 }

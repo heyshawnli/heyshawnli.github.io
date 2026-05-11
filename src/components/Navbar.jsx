@@ -20,11 +20,16 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/50' : 'bg-transparent'
+        scrolled
+          ? 'bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm'
+          : 'bg-transparent'
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
-        <a href="#hero" className="font-mono text-cyan-400 font-medium text-sm tracking-widest hover:text-cyan-300 transition-colors">
+        <a
+          href="#hero"
+          className="font-mono text-indigo-600 font-semibold text-sm tracking-widest hover:text-indigo-500 transition-colors"
+        >
           shawn.li
         </a>
 
@@ -34,25 +39,17 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-zinc-400 hover:text-white transition-colors duration-200"
+                className="text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200 font-medium"
               >
                 {link.label}
               </a>
             </li>
           ))}
-          <li>
-            <a
-              href="mailto:shawnli.sde@gmail.com"
-              className="text-sm font-medium px-4 py-2 rounded-lg border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
-            >
-              Hire Me
-            </a>
-          </li>
         </ul>
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-zinc-400 hover:text-white transition-colors"
+          className="md:hidden text-gray-500 hover:text-gray-900 transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -70,28 +67,19 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800">
+        <div className="md:hidden bg-white border-b border-gray-100 shadow-sm">
           <ul className="flex flex-col px-6 py-4 gap-4">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-zinc-300 hover:text-white transition-colors"
+                  className="text-gray-600 hover:text-gray-900 font-medium transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               </li>
             ))}
-            <li>
-              <a
-                href="mailto:shawnli.sde@gmail.com"
-                className="text-cyan-400 font-medium"
-                onClick={() => setMenuOpen(false)}
-              >
-                Hire Me
-              </a>
-            </li>
           </ul>
         </div>
       )}
